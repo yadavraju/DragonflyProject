@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_dragon_detail">
+
+    <TextView
+        android:id="@+id/tvDdate"
+        style="@style/TextAppearance.AppCompat.DetailDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="May 4, 2015 at 4:30pm" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.AppCompat.DetailLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:layout_weight="1"
+            android:text="Death Star Ventilation Design Meeting" />
+
+        <CheckBox
+            android:id="@+id/cbStaus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        style="@style/TextAppearance.AppCompat.DetailDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seriously need to get this wrapped up, guys. Another meeting to get this sorted. Launch is in two weeks.\nThe vent ports are exposed down the main trench. George has pointed out this could be a problem, since any disruption can cause explosions. QA has flagged explosions as" />
+
+    <TextView
+        android:id="@+id/tvComment"
+        style="@style/TextAppearance.AppCompat.DetailDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:typeface="serif"
+        android:text="List of comment : For now I am not showing list of comment here, hope you don't mind" />
+</LinearLayout>
