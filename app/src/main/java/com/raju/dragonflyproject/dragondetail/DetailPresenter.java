@@ -23,18 +23,12 @@ import io.reactivex.schedulers.Schedulers;
  * Created by Raju Yadav
  */
 
-
-
 public class DetailPresenter {
 
     private static final String TAG = DetailPresenter.class.getSimpleName();
     private final DragonService dragonService;
-    private DetailView nullDetailView = new DetailView() {
-        @Override
-        public void loadDetailData(boolean status) {/*ignore*/}
-    };
-
-    private DetailView detailView = nullDetailView;
+    private DetailView nullDetailView = status -> {/*ignore*/};
+    private DetailView detailView;
     private Disposable dragonStatusDisposable, dragonUpdateStatusDisposable;
 
     public DetailPresenter(DetailView detailView, String eventID) {
@@ -59,7 +53,7 @@ public class DetailPresenter {
             dragonUpdateStatusDisposable = dragonService.updateEventStatus(eventID, ApiService.INSTANCE.getUSER_NAME(), new EventStatus(userClickedStatus))
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(status -> Log.e(TAG, "Sucessfully to post status of events" + status.code()),
+                    .subscribe(status -> Log.e(TAG, "Successfully to post status of events" + status.code()),
                             error -> Log.e(TAG, "Failed to post status of events" + error));
         }
     }
